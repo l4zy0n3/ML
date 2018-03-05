@@ -1,3 +1,11 @@
+function sig( x){
+  return (1/(1+exp(-x)));
+}
+
+function func( x){
+  return (x**2+2*x+3);
+}
+
 function setup() {
   createCanvas( 800, 600);
   background(0);
@@ -12,7 +20,7 @@ function setup() {
   translate( width/2, height/2);
   beginShape();
   for( var x = -width/2; x <= width/2; x += width/128){
-    var y = map( exp(x*PI/360), 10, -10, -height/2, height/2);
+    var y = map( tan(x*PI/360), 10, -10, -height/2, height/2);
     vertex( x, y);
   }
   endShape();
